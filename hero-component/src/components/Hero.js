@@ -15,11 +15,6 @@ const HeroDiv = styled.div`
   }
 `
 
-const HeroTitle = styled.h1`
-`
-
-const HeroSubtitle = styled.h3`
-`
 const Hero = ({data, children}) => (
   <HeroDiv className="hero tertiary vat-disc lazyloaded" id="hero"
     imagexs={data.contentfulTestHero.heroBackgroundMobile.file.url}
@@ -29,8 +24,8 @@ const Hero = ({data, children}) => (
     <Container className="container lazyloaded">
       <div className="row txt-color-tertiary">
         <div className="col-xs-12 col-md-7">
-          <HeroTitle>{data.contentfulTestHero.title}</HeroTitle>
-          <HeroSubtitle>{data.contentfulTestHero.subtitle}</HeroSubtitle>
+          <h1>{data.contentfulTestHero.title}</h1>
+          <h3>{data.contentfulTestHero.subtitle}</h3>
           <ul>
           {data.contentfulTestHero.featuresList.map(feature => (
             <li>{feature}</li>
