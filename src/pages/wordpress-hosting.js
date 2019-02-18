@@ -2,7 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import { StaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
-import Hero from "../components/Hero";
+import Hero from "../components/Hero"
+import IconGroup from "../components/IconGroup"
 import "./wordpress-hosting.css"
 
 const WordpressHostingPage = ({children}) => (
@@ -10,7 +11,7 @@ const WordpressHostingPage = ({children}) => (
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query wpHostingQuery {
         contentfulTestHero {
           title,
           subtitle,
@@ -35,6 +36,16 @@ const WordpressHostingPage = ({children}) => (
               url
             }
           },
+        },
+        contentfulContentfulTestIconGroup{
+          iconTitles,
+          iconText,
+          iconImages{
+            file {
+              url
+            }
+            title
+          }
         }
       }
     `}
@@ -45,6 +56,9 @@ const WordpressHostingPage = ({children}) => (
             <Hero data={data}>
               <small>vat disclaimer text</small> 
             </Hero>
+            <IconGroup data={data}>
+
+            </IconGroup>
             {children}
         </div>
       </div>
