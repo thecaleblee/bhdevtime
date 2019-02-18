@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-
 import "./base.css"
-
 import styled from 'styled-components'
 const Footer = styled.footer`
   grid-row: last-child;
