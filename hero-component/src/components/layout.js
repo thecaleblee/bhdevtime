@@ -4,13 +4,14 @@ import "./base.css"
 import styled from 'styled-components'
 const Footer = styled.footer`
   grid-row: last-child;
+  text-align: center;
 `
 
 const Layout = ({ children }) => (
   <div>
     {children}
     <Footer>
-      © {new Date().getFullYear()}
+      © {new Date().getFullYear()} BHFOSDEV, Bluehost, calebmasters
     </Footer>
   </div> 
 )

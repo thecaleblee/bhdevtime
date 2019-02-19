@@ -18,6 +18,8 @@ const Container = styled.div`
     max-width: 117.0rem;
   }
 `
+/* Technically correct warnings for lack of use because we're not passing data for these */
+
 const IconGroupTitle = styled.h2`
 `
 
