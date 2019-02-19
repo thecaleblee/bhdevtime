@@ -8,6 +8,12 @@ const HeaderWrapper = styled.div`
   max-width: 100%;
   margin: 0 auto;
 
+  a {
+    padding: 10px;
+    margin-right: 30px;
+    margin: 10px 15px 10px 0;
+  }
+
   @media (min-width: 768px) {
     max-width: 740px;
   }
@@ -20,18 +26,15 @@ const HeaderWrapper = styled.div`
     max-width: 1190px;
   }
 `
-const HeaderTitle = styled.h1`
-  font-size: 8vw;
-  text-align: center;
-`
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <HeaderWrapper>
-    <HeaderTitle>
-      <Link to="/">
-        {siteTitle}
-      </Link>
-    </HeaderTitle>
+    <Link to="/" className="btn-lg">
+      Home
+    </Link>
+    <Link to="/wordpress-hosting" className="btn-lg">
+      Wordpres-Hosting
+    </Link>
   </HeaderWrapper>
 )
 
