@@ -13,35 +13,33 @@ const WordpressHostingPage = ({children}) => (
     query={graphql`
       query wpHostingQuery {
         contentfulTestHero {
-          title,
-          subtitle,
-          featuresList,
-          marketingSlang,
-          linkText,
-          linkHref,
-          startingPriceUsd,
-          monthlyPriceUsd,
+          title
+          subtitle
+          featuresList
+          marketingSlang
+          linkText
+          linkHref
+          startingPriceUsd
+          monthlyPriceUsd
           heroBackgroundMobile {
             file {
               url
             }
-          },
+          }
           heroBackgroundTablet {
             file {
               url
             }
-          },
+          }
           heroBackgroundDesktop {
             file {
               url
             }
-          },
-        },
+          }
+        }
         contentfulContentfulTestIconGroup {
-          iconGroupTitle,
-          iconGroupSubtitle,
-          iconTitles,
-          iconText,
+          iconTitles
+          iconText
           iconImages{
             file {
               url
