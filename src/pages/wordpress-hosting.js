@@ -57,7 +57,7 @@ const WordpressHostingPage = ({children}) => (
               <small>vat disclaimer text</small> 
             </Hero>
             <IconGroup data={data}>
-
+              {children}
             </IconGroup>
             {children}
         </div>
