@@ -8,22 +8,42 @@ const Container = styled.div`
 
   @media (min-width: 48em) {
     max-width: 73.8rem;
+    padding: 6rem 1.5rem;
   }
 
   @media (min-width: 62em) {
     max-width: 96.2rem;
+    padding: 7rem 1.5rem;
   }
 
   @media (min-width: 75em) {
     max-width: 117.0rem;
+    padding: 8rem 1.5rem;
   }
 `
-/* Technically correct warnings for lack of use because we're not passing data for these */
-
 const IconGroupTitle = styled.h2`
+  font-family: "Open Sans",Arial,sans-serif;
+  margin: 2.2rem 0 2.2rem 0;
+  color: #5588d3;
+  font-size: 2.6rem;
+  font-weight: 300;
+  line-height: 3.6rem;
+  text-align: center;
+
+  @media (min-width: 62em) {
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
 `
 
 const IconGroupSubtitle = styled.p`
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  font-weight: 400;
+  font-family: "Open Sans",Arial,sans-serif;
+  color: #5b5b5b;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
 `
 
 const Content = styled.div`
@@ -83,8 +103,8 @@ const IconText = styled.p`
 
 const IconGroup = ({data, children}) => (
   <Container>
-    {data.contentfulContentfulTestIconGroup.iconGroupTitle ? `<IconTitle>${data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconTitle>`: '' }
-    {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? `<IconText>${data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconText>`: '' }
+    {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+    {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
     <Content>
       {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
         <ImgContainer>

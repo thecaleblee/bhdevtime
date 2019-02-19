@@ -37,7 +37,9 @@ const WordpressHostingPage = ({children}) => (
             }
           },
         },
-        contentfulContentfulTestIconGroup{
+        contentfulContentfulTestIconGroup {
+          iconGroupTitle,
+          iconGroupSubtitle,
           iconTitles,
           iconText,
           iconImages{
