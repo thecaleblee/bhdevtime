@@ -751,12 +751,12 @@
       "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2019-02-19T00:06:32.417Z",
+      "buildTime": "2019-02-19T00:17:40.811Z",
       "id": "Site",
       "parent": null,
       "children": [],
       "internal": {
-        "contentDigest": "9273280fd331b89d0a9fc473d6988dde",
+        "contentDigest": "1693b222a05ee6f21e0bf4348feebb5d",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -766,7 +766,7 @@
       "children": [],
       "parent": null,
       "internal": {
-        "contentDigest": "4d1854e0a822d695daf961000f837b2b",
+        "contentDigest": "c8982dd1872488589d12934dbcb62195",
         "type": "Directory",
         "description": "Directory \"src/images\"",
         "owner": "gatsby-source-filesystem"
@@ -778,7 +778,7 @@
       "size": 136,
       "prettySize": "136 B",
       "modifiedTime": "2019-02-19T00:05:26.000Z",
-      "accessTime": "2019-02-19T00:06:36.000Z",
+      "accessTime": "2019-02-19T00:17:52.000Z",
       "changeTime": "2019-02-19T00:05:26.000Z",
       "birthTime": "2019-02-19T00:05:26.000Z",
       "root": "/",
@@ -796,11 +796,11 @@
       "blksize": 4096,
       "ino": 60173040,
       "blocks": 0,
-      "atimeMs": 1550534796000,
+      "atimeMs": 1550535472000,
       "mtimeMs": 1550534726000,
       "ctimeMs": 1550534726000,
       "birthtimeMs": 1550534726000,
-      "atime": "2019-02-19T00:06:36.000Z",
+      "atime": "2019-02-19T00:17:52.000Z",
       "mtime": "2019-02-19T00:05:26.000Z",
       "ctime": "2019-02-19T00:05:26.000Z",
       "birthtime": "2019-02-19T00:05:26.000Z"
@@ -823,7 +823,7 @@
       "size": 21212,
       "prettySize": "21.2 kB",
       "modifiedTime": "2019-02-19T00:05:26.000Z",
-      "accessTime": "2019-02-19T00:05:28.000Z",
+      "accessTime": "2019-02-19T00:06:36.000Z",
       "changeTime": "2019-02-19T00:05:26.000Z",
       "birthTime": "2019-02-19T00:05:26.000Z",
       "root": "/",
@@ -841,11 +841,11 @@
       "blksize": 4096,
       "ino": 60173042,
       "blocks": 48,
-      "atimeMs": 1550534728000,
+      "atimeMs": 1550534796000,
       "mtimeMs": 1550534726000,
       "ctimeMs": 1550534726000,
       "birthtimeMs": 1550534726000,
-      "atime": "2019-02-19T00:05:28.000Z",
+      "atime": "2019-02-19T00:06:36.000Z",
       "mtime": "2019-02-19T00:05:26.000Z",
       "ctime": "2019-02-19T00:05:26.000Z",
       "birthtime": "2019-02-19T00:05:26.000Z"
@@ -868,7 +868,7 @@
       "size": 167273,
       "prettySize": "167 kB",
       "modifiedTime": "2019-02-19T00:05:26.000Z",
-      "accessTime": "2019-02-19T00:05:28.000Z",
+      "accessTime": "2019-02-19T00:06:36.000Z",
       "changeTime": "2019-02-19T00:05:26.000Z",
       "birthTime": "2019-02-19T00:05:26.000Z",
       "root": "/",
@@ -886,11 +886,11 @@
       "blksize": 4096,
       "ino": 60173041,
       "blocks": 328,
-      "atimeMs": 1550534728000,
+      "atimeMs": 1550534796000,
       "mtimeMs": 1550534726000,
       "ctimeMs": 1550534726000,
       "birthtimeMs": 1550534726000,
-      "atime": "2019-02-19T00:05:28.000Z",
+      "atime": "2019-02-19T00:06:36.000Z",
       "mtime": "2019-02-19T00:05:26.000Z",
       "ctime": "2019-02-19T00:05:26.000Z",
       "birthtime": "2019-02-19T00:05:26.000Z"
@@ -1450,14 +1450,14 @@
   },
   "componentDataDependencies": {
     "nodes": {
+      "Site": [
+        "sq--src-components-seo-js"
+      ],
       "c3KNuLfnOWeznVek6VCOvra": [
         "sq--src-pages-wordpress-hosting-js"
       ],
       "c1u4UJYWs3YIXygKbRcvIxF": [
         "sq--src-pages-wordpress-hosting-js"
-      ],
-      "Site": [
-        "sq--src-components-seo-js"
       ],
       "c3nGa20zbtfZMkkaMmc8KmF": [
         "sq--src-pages-wordpress-hosting-js"
@@ -1481,13 +1481,13 @@
     "connections": {}
   },
   "jsonDataPaths": {
-    "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
+    "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
     "sq--src-components-seo-js": 1025518380,
     "sq--src-pages-wordpress-hosting-js": 1554112902,
     "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E",
-    "wordpress-hosting-399": "4/path---wordpress-hosting-399-eb8-NZuapzHg3X9TaN1iIixfv1W23E",
     "page-2-fbc": "53/path---page-2-fbc-5a8-NZuapzHg3X9TaN1iIixfv1W23E",
+    "wordpress-hosting-399": "4/path---wordpress-hosting-399-eb8-NZuapzHg3X9TaN1iIixfv1W23E",
     "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E"
   },
   "components": {
@@ -1513,14 +1513,6 @@
     }
   },
   "staticQueryComponents": {
-    "sq--src-pages-wordpress-hosting-js": {
-      "name": "wpHostingQuery",
-      "componentPath": "/Users/cmasters/projects/devTimeBHClose/src/pages/wordpress-hosting.js",
-      "id": "sq--src-pages-wordpress-hosting-js",
-      "jsonName": "sq--src-pages-wordpress-hosting-js",
-      "query": "query wpHostingQuery {\n  contentfulTestHero {\n    title\n    subtitle\n    featuresList\n    marketingSlang\n    linkText\n    linkHref\n    startingPriceUsd\n    monthlyPriceUsd\n    heroBackgroundMobile {\n      file {\n        url\n      }\n    }\n    heroBackgroundTablet {\n      file {\n        url\n      }\n    }\n    heroBackgroundDesktop {\n      file {\n        url\n      }\n    }\n  }\n  contentfulContentfulTestIconGroup {\n    iconTitles\n    iconText\n    iconImages {\n      file {\n        url\n      }\n      title\n    }\n  }\n}\n",
-      "hash": 1554112902
-    },
     "sq--src-components-seo-js": {
       "name": "DefaultSEOQuery",
       "componentPath": "/Users/cmasters/projects/devTimeBHClose/src/components/seo.js",
@@ -1528,6 +1520,14 @@
       "jsonName": "sq--src-components-seo-js",
       "query": "query DefaultSEOQuery {\n  site {\n    siteMetadata {\n      title\n      description\n      author\n    }\n  }\n}\n",
       "hash": 1025518380
+    },
+    "sq--src-pages-wordpress-hosting-js": {
+      "name": "wpHostingQuery",
+      "componentPath": "/Users/cmasters/projects/devTimeBHClose/src/pages/wordpress-hosting.js",
+      "id": "sq--src-pages-wordpress-hosting-js",
+      "jsonName": "sq--src-pages-wordpress-hosting-js",
+      "query": "query wpHostingQuery {\n  contentfulTestHero {\n    title\n    subtitle\n    featuresList\n    marketingSlang\n    linkText\n    linkHref\n    startingPriceUsd\n    monthlyPriceUsd\n    heroBackgroundMobile {\n      file {\n        url\n      }\n    }\n    heroBackgroundTablet {\n      file {\n        url\n      }\n    }\n    heroBackgroundDesktop {\n      file {\n        url\n      }\n    }\n  }\n  contentfulContentfulTestIconGroup {\n    iconTitles\n    iconText\n    iconImages {\n      file {\n        url\n      }\n      title\n    }\n  }\n}\n",
+      "hash": 1554112902
     }
   }
 }
