@@ -2,24 +2,24 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
+import "./wordpress-hosting.css"
 import Hero from "../components/Hero"
 import IconGroup from "../components/IconGroup"
-import "./wordpress-hosting.css"
 import PricingCard from "../components/pricingCards";
 import FeatureGrid from "../components/featureGrid";
 
-const WordpressHostingPage = ({data, children}) => (
+const WordpressHostingPage = ({ data, children }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <div className="site-wrapper">
       <div className="site-canvas">
-          <Hero data={data}>
-            <small>vat disclaimer text</small> 
-          </Hero>
-          <IconGroup data={data} />
-          <PricingCard />
-          <FeatureGrid data={data} />
-          {children}
+        <Hero data={data}>
+          <small>vat disclaimer text</small>
+        </Hero>
+        <IconGroup data={data} />
+        <PricingCard />
+        <FeatureGrid data={data} />
+        {children}
       </div>
     </div>
   </Layout>

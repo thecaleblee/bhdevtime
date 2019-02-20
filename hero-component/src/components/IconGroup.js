@@ -2,6 +2,24 @@ import React from 'react'
 import styled from 'styled-components'
 import CodeFlipper from './CodeFlipper';
 
+const FlipControlsContainer = styled.div `
+  position: relative;
+
+  button {
+    display: none;
+    position: absolute;
+    z-index: 4;
+    top: 20px;
+    right: 20px;
+  }
+
+  &:hover {
+    button {
+      display: block;
+    }
+  }
+`
+
 const Container = styled.div`
   max-width: 100%;
   padding: 0 15px;
@@ -22,6 +40,7 @@ const Container = styled.div`
     padding: 8rem 1.5rem;
   }
 `
+
 const IconGroupTitle = styled.h2`
   font-family: "Open Sans",Arial,sans-serif;
   margin: 2.2rem 0 2.2rem 0;
@@ -103,27 +122,30 @@ const IconText = styled.p`
 `
 
 const IconGroup = ({data, children}) => (
-  <>
-  <div className="flip-container" ontouchstart="this.classList.toggle('hover');">
-  <Container>
-    {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-    {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
-    <Content>
-      {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
-        <ImgContainer>
-          <img src={icon.file.url} alt={icon.title} />
-        </ImgContainer>
-      ))}
-      {data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
-        <IconTitle>{title}</IconTitle>
-      ))}
-      {data.contentfulContentfulTestIconGroup.iconText.map(text => (
-        <IconText>{text}</IconText>
-      ))}
-      {children}
-    </Content>
-  </Container>
-<CodeFlipper>
+  <FlipControlsContainer>
+    <div className="flip-container">
+      <div className="flipper">
+        <div className="front">
+          <Container>
+            {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+            {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+            <Content>
+              {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+                <ImgContainer>
+                  <img src={icon.file.url} alt={icon.title} />
+                </ImgContainer>
+              ))}
+              {data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+                <IconTitle>{title}</IconTitle>
+              ))}
+              {data.contentfulContentfulTestIconGroup.iconText.map(text => (
+                <IconText>{text}</IconText>
+              ))}
+              {children}
+            </Content>
+          </Container>
+        </div>
+        <CodeFlipper>
 {`const IconGroup = ({data, children}) => (
   <Container>
     {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
@@ -146,8 +168,9 @@ const IconGroup = ({data, children}) => (
 )
 `}
           </CodeFlipper>
-</div>          
-</>
+      </div>
+    </div>
+  </FlipControlsContainer>          
 )
 
 export default IconGroup
