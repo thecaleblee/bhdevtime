@@ -1,5 +1,6 @@
 import React from 'react' 
 import styled from 'styled-components'
+import CodeFlipper from './CodeFlipper';
 
 const Container = styled.div`
   max-width: 100%;
@@ -102,6 +103,8 @@ const IconText = styled.p`
 `
 
 const IconGroup = ({data, children}) => (
+  <>
+  <div className="flip-container" ontouchstart="this.classList.toggle('hover');">
   <Container>
     {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
     {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
@@ -120,6 +123,31 @@ const IconGroup = ({data, children}) => (
       {children}
     </Content>
   </Container>
+<CodeFlipper>
+{`const IconGroup = ({data, children}) => (
+  <Container>
+    {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+    {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+    <Content>
+      {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+        <ImgContainer>
+          <img src={icon.file.url} alt={icon.title} />
+        </ImgContainer>
+      ))}
+      {data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+        <IconTitle>{title}</IconTitle>
+      ))}
+      {data.contentfulContentfulTestIconGroup.iconText.map(text => (
+        <IconText>{text}</IconText>
+      ))}
+      {children}
+    </Content>
+  </Container>
+)
+`}
+          </CodeFlipper>
+</div>          
+</>
 )
 
 export default IconGroup
