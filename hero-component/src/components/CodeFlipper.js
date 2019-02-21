@@ -116,15 +116,7 @@ class CodeFlipper extends React.Component {
         <button onClick={this.handleClick}>
           {toggled ? 'Hide Code' : 'Show Code'}
         </button>
-        <FlipContainer 
-          smDisplayHeight={this.props.smDisplayHeight}
-          smCodeHeight={this.props.smCodeHeight}
-          mdDisplayHeight={this.props.mdDisplayHeight}
-          mdCodeHeight={this.props.mdCodeHeight}
-          lgDisplayHeight={this.props.lgDisplayHeight}
-          lgCodeHeight={this.props.lgCodeHeight}
-          className={toggled ? 'flip-container flipped' : 'flip-container'}
-        >
+        <FlipContainer {...this.props} className={toggled ? 'flip-container flipped' : 'flip-container'}>
           <div className="flipper">
             <div className="front">
               {this.props.children}
