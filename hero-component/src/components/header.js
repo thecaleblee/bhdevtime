@@ -32,9 +32,7 @@ const Header = () => (
     <Link to="/" className="btn-lg">
       Home
     </Link>
-    <Link to="/wordpress-hosting" className="btn-lg">
-      Wordpres-Hosting
-    </Link>
+
   </HeaderWrapper>
 )
 

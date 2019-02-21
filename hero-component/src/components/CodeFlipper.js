@@ -1,25 +1,35 @@
 import React from 'react'
-import './codeFlipper.css'
+//import './codeFlipper.css'
+import jsxToString from 'jsx-to-string'
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import jsx from 'react-syntax-highlighter/dist/esm//languages/prism/jsx';
 import { hopscotch } from 'react-syntax-highlighter/dist/esm/styles/prism';
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 
-const CodeFlipper = ({ children }) => (
-  <FlipControlsContainer>
-    <div className="flip-container">
-      <div className="flipper">
-        <div className="front">
-          {children}
-        </div>
-        <div className="back">
-          <SyntaxHighlighter language='jsx' showLineNumbers='1' wrapLines='true' style={hopscotch}>{children}</SyntaxHighlighter>
+
+//const CodeFlipper = ({ children }) => (
+class CodeFlipper extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() { 
+    return (
+    <div class="flip-controls-container">
+      <div className="flip-container">
+        <div className="flipper">
+          <div className="front">
+            {this.props.children}
+          </div>
+          <div className="back">
+            <SyntaxHighlighter language='jsx' showLineNumbers='1' wrapLines='true' style={hopscotch}>{jsxToString(this.props.children)}</SyntaxHighlighter>
+          </div>
         </div>
       </div>
     </div>
-  </FlipControlsContainer>
-)
-
+    )
+  }
+}
 export default CodeFlipper
 
 // Todo: Convert to include all related fields

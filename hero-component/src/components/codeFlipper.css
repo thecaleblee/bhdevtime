@@ -1,7 +1,6 @@
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
-	overflow: visible;
 }
 
 /* flip the pane when flippeded */
