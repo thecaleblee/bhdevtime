@@ -1,6 +1,6 @@
-import React, { Component } from 'react' 
-import styled from 'styled-components'
+import React, { Component } from 'react'
 //import CodeFlipper from './CodeFlipper';
+import styled from 'styled-components'
 
 const Container = styled.div`
   max-width: 100%;
@@ -108,36 +108,36 @@ const IconText = styled.p`
 // updating the state and rerendering
 //const IconGroup = ({data, children}) => (
 class IconGroup extends Component {
-    constructor(props) {
-      super(props);
+  constructor(props) {
+    super(props);
 
-      this.state = {
-        toggled: false,
-      };
-    }
+    this.state = {
+      toggled: false,
+    };
+  }
 
-    render() {
-      const { toggled } = this.state
-  
-      return (
-        <>
-          <Container>
-            {this.props.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-            {this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
-            <Content>
-              {this.props.contentfulContentfulTestIconGroup.iconImages.map(icon => (
-                <ImgContainer>
-                  <img src={icon.file.url} alt={icon.title} />
-                </ImgContainer>
-              ))}
-              {this.props.contentfulContentfulTestIconGroup.iconTitles.map(title => (
-                <IconTitle>{title}</IconTitle>
-              ))}
-              {this.props.contentfulContentfulTestIconGroup.iconText.map(text => (
-                <IconText>{text}</IconText>
-              ))}
-            </Content>
-          </Container>
+  render() {
+    const { toggled } = this.state
+
+    return (
+      <>
+        {`<Container>
+        {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+        {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+        <Content>
+          {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+            <ImgContainer>
+              <img src={icon.file.url} alt={icon.title} />
+            </ImgContainer>
+          ))}
+          {data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+            <IconTitle>{title}</IconTitle>
+          ))}
+          {data.contentfulContentfulTestIconGroup.iconText.map(text => (
+            <IconText>{text}</IconText>
+          ))}
+        </Content>
+        </Container>`}
       </>
     )
   }
