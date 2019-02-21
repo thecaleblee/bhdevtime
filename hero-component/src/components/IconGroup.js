@@ -1,21 +1,25 @@
-import React from 'react' 
+import React, { Component } from 'react' 
 import styled from 'styled-components'
 import CodeFlipper from './CodeFlipper';
+import { StaticQuery, graphql } from 'gatsby';
 
 const FlipControlsContainer = styled.div `
   position: relative;
 
   button {
-    display: none;
+    display: block;
     position: absolute;
+    padding: 5px 15px;
     z-index: 4;
     top: 20px;
     right: 20px;
+    transition: all 0.4s ease;
+    opacity: 0;
   }
 
   &:hover {
     button {
-      display: block;
+      opacity: 1;
     }
   }
 `
@@ -121,45 +125,78 @@ const IconText = styled.p`
   text-align: center;
 `
 
-const IconGroup = ({data, children}) => (
-  <FlipControlsContainer>
-    <div className="flip-container">
-      <div className="flipper">
-        <div className="front">
-          <Container>
-            {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-            {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
-            <Content>
-              {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
-                <ImgContainer>
-                  <img src={icon.file.url} alt={icon.title} />
-                </ImgContainer>
-              ))}
-              {data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
-                <IconTitle>{title}</IconTitle>
-              ))}
-              {data.contentfulContentfulTestIconGroup.iconText.map(text => (
-                <IconText>{text}</IconText>
-              ))}
-              {children}
-            </Content>
-          </Container>
-        </div>
-        <CodeFlipper>
+// TODO: Convert to class and allow for 'flipped' to be added to the flip-container by
+// updating the state and rerendering
+//const IconGroup = ({data, children}) => (
+class IconGroup extends Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        toggled: false,
+      };
+    }
+
+    render() {
+      const { toggled } = this.state
+  
+      return (
+        <>
+      <StaticQuery
+        query={graphql`
+          query {
+          contentfulContentfulTestIconGroup {
+          iconTitles,
+          iconText,
+          iconImages {
+            file {
+              url,
+            }
+            title,
+          }
+        }
+        `}
+        render={(data) => ( 
+          <IconGroup data={data} />
+        )}
+      />
+      <FlipControlsContainer>
+        <div className="flip-container">
+          <div className="flipper">
+            <div className="front">
+              <Container>
+                {this.props.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+                {this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+                <Content>
+                  {this.props.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+                    <ImgContainer>
+                      <img src={icon.file.url} alt={icon.title} />
+                    </ImgContainer>
+                  ))}
+                  {this.props.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+                    <IconTitle>{title}</IconTitle>
+                  ))}
+                  {this.props.contentfulContentfulTestIconGroup.iconText.map(text => (
+                    <IconText>{text}</IconText>
+                  ))}
+                </Content>
+              </Container>
+            </div>
+            <CodeFlipper>
 {`const IconGroup = ({data, children}) => (
   <Container>
-    {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-    {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+    {this.props.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+    {this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
     <Content>
-      {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+      {this.props.contentfulContentfulTestIconGroup.iconImages.map(icon => (
         <ImgContainer>
           <img src={icon.file.url} alt={icon.title} />
         </ImgContainer>
       ))}
-      {data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+      {this.props.contentfulContentfulTestIconGroup.iconTitles.map(title => (
         <IconTitle>{title}</IconTitle>
       ))}
-      {data.contentfulContentfulTestIconGroup.iconText.map(text => (
+      {this.props.contentfulContentfulTestIconGroup.iconText.map(text => (
         <IconText>{text}</IconText>
       ))}
       {children}
@@ -167,10 +204,13 @@ const IconGroup = ({data, children}) => (
   </Container>
 )
 `}
-          </CodeFlipper>
-      </div>
-    </div>
-  </FlipControlsContainer>          
-)
+            </CodeFlipper>
+          </div>
+        </div>
+      </FlipControlsContainer>          
+      </>
+    )
+  }
+}
 
 export default IconGroup

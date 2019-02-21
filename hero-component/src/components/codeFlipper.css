@@ -1,6 +1,7 @@
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
+	overflow: visible;
 }
 
 /* flip the pane when flippeded */
@@ -8,11 +9,15 @@
 	transform: rotateY(180deg);
 }
 
-.flip-container, 
+.flip-container,
 .front, 
 .back {
 	width: 100vw;
-	height: 480px;
+	min-height: 450px
+}
+
+.back {
+	min-height: 800px;
 }
 
 /* flip speed goes here */
