@@ -33,12 +33,31 @@ SyntaxHighlighter.registerLanguage('jsx', jsx);
 class CodeFlipper extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      toggled: false,
+    };
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
+  handleClick() {
+    this.setState(state => ({
+      toggled: !state.toggled
+    }));
+    console.log(this.state.toggled)
+  }
+
+
   render() { 
+    const toggled = this.state.toggled;
+
     return (
     <div class="flip-controls-container">
-      <div className="flip-container">
+      <button onClick={this.handleClick}>
+        {toggled ? 'Hide Code' : 'Show Code'}
+      </button>
+      <div className={toggled ? 'flip-container flipped' : 'flip-container'}>
         <div className="flipper">
           <div className="front">
             {this.props.children}
@@ -52,28 +71,5 @@ class CodeFlipper extends React.Component {
     )
   }
 }
+
 export default CodeFlipper
-
-// Todo: Convert to include all related fields
-
-//{`const IconGroup = ({data, children}) => (
-//  <Container>
-//    {this.props.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-//    {this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
-//    <Content>
-//      {this.props.contentfulContentfulTestIconGroup.iconImages.map(icon => (
-//        <ImgContainer>
-//          <img src={icon.file.url} alt={icon.title} />
-//        </ImgContainer>
-//      ))}
-//      {this.props.contentfulContentfulTestIconGroup.iconTitles.map(title => (
-//        <IconTitle>{title}</IconTitle>
-//      ))}
-//      {this.props.contentfulContentfulTestIconGroup.iconText.map(text => (
-//        <IconText>{text}</IconText>
-//      ))}
-//      {children}
-//    </Content>
-//  </Container>
-//)
-//`}

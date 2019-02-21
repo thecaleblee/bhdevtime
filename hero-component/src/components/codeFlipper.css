@@ -15,8 +15,26 @@
 	min-height: 450px
 }
 
+/* TODO: Temp to set height of container.. will be set as a prop */
 .back {
 	min-height: 800px;
+}
+
+.flip-controls-container {
+	position: relative;
+}
+
+.flip-controls-container button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	opacity: 0;
+	transition: all 0.5s ease;
+	z-index: 4;
+}
+
+.flip-controls-container:hover button {
+	opacity: 1;
 }
 
 /* flip speed goes here */

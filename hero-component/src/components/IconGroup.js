@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import CodeFlipper from './CodeFlipper';
+import CodeFlipper from './CodeFlipper'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -110,35 +110,48 @@ const IconText = styled.p`
 class IconGroup extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      toggled: false,
-    };
   }
 
   render() {
-    const { toggled } = this.state
-
     return (
-      <>
+      <CodeFlipper
+        jsxCode={`
+          <Container>
+            {this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+            {this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+            <Content>
+              {this.props.data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+                <ImgContainer>
+                  <img src={icon.file.url} alt={icon.title} />
+                </ImgContainer>
+              ))}
+              {this.props.data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+                <IconTitle>{title}</IconTitle>
+              ))}
+              {this.props.data.contentfulContentfulTestIconGroup.iconText.map(text => (
+                <IconText>{text}</IconText>
+              ))}
+            </Content>
+          </Container>
+        `}>
         <Container>
-        {this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-        {this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
-        <Content>
-          {this.props.data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
-            <ImgContainer>
-              <img src={icon.file.url} alt={icon.title} />
-            </ImgContainer>
-          ))}
-          {this.props.data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
-            <IconTitle>{title}</IconTitle>
-          ))}
-          {this.props.data.contentfulContentfulTestIconGroup.iconText.map(text => (
-            <IconText>{text}</IconText>
-          ))}
-        </Content>
+          {this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+          {this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+          <Content>
+            {this.props.data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+              <ImgContainer>
+                <img src={icon.file.url} alt={icon.title} />
+              </ImgContainer>
+            ))}
+            {this.props.data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+              <IconTitle>{title}</IconTitle>
+            ))}
+            {this.props.data.contentfulContentfulTestIconGroup.iconText.map(text => (
+              <IconText>{text}</IconText>
+            ))}
+          </Content>
         </Container>
-      </>
+      </CodeFlipper>
     )
   }
 }
