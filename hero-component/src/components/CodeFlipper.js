@@ -8,6 +8,19 @@ SyntaxHighlighter.registerLanguage('jsx', jsx);
 
 /* To Use:
 
+  Template
+  <CodeFlipper
+    jsxCode={`
+      // jsx goes here 
+    `}
+    smDisplayHeight="335"
+    smCodeHeight="861"
+    mdDisplayHeight="430"
+    lgDisplayHeight="460"
+    >
+      // actual jsx goes here
+  </CodeFlipper>
+
   Call <CodeFlipper> with your regular JSX as a child
   e.g. 
     <CodeFlipper>
@@ -41,12 +54,37 @@ const FlipContainer = styled.div`
   min-height: ${props => props.smDisplayHeight}px;
 
   &.flipped {
-    min-height: ${props => props.smDisplayHeight}px;
+    min-height: ${props => props.smCodeHeight}px;
     margin-top: -8px;
     margin-bottom: -8px;
   }
+
   .back {
-    height: ${props => props.smDisplayHeight}px;
+    height: ${props => props.smCodeHeight}px;
+  }
+
+  @media (min-width: 36rem) {
+    min-height: ${props => props.mdDisplayHeight}px;
+
+    &.flipped {
+      min-height: ${props => props.mdCodeHeight}px;
+    }
+
+    .back {
+      height: ${props => props.mdCodeHeight}px;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    min-height: ${props => props.lgDisplayHeight}px;
+
+    &.flipped {
+      min-height: ${props => props.lgCodeHeight}px;
+    }
+
+    .back {
+      height: ${props => props.lgCodeHeight}px;
+    }
   }
 `
 
@@ -62,7 +100,6 @@ class CodeFlipper extends React.Component {
     };
 
     this.handleClick = this.handleClick.bind(this);
-    console.log(this.props.smDisplayHeight);
   }
 
   handleClick() {
@@ -79,7 +116,15 @@ class CodeFlipper extends React.Component {
         <button onClick={this.handleClick}>
           {toggled ? 'Hide Code' : 'Show Code'}
         </button>
-        <FlipContainer smDisplayHeight={this.props.smDisplayHeight} className={toggled ? 'flip-container flipped' : 'flip-container'}>
+        <FlipContainer 
+          smDisplayHeight={this.props.smDisplayHeight}
+          smCodeHeight={this.props.smCodeHeight}
+          mdDisplayHeight={this.props.mdDisplayHeight}
+          mdCodeHeight={this.props.mdCodeHeight}
+          lgDisplayHeight={this.props.lgDisplayHeight}
+          lgCodeHeight={this.props.lgCodeHeight}
+          className={toggled ? 'flip-container flipped' : 'flip-container'}
+        >
           <div className="flipper">
             <div className="front">
               {this.props.children}
@@ -95,7 +140,10 @@ class CodeFlipper extends React.Component {
 }
 
 CodeFlipper.defaultProps = {
-  smDisplayHeight: "500"
+  smDisplayHeight: "110",
+  smCodeHeight: "110",
+  mdDisplayHeight: "110",
+  mdCodeHeight: "110"
 }
 
 export default CodeFlipper

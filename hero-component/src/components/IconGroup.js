@@ -103,51 +103,51 @@ const IconText = styled.p`
   text-align: center;
 `
 
-class IconGroup extends Component {
-  render() {
-    return (
-      <CodeFlipper
-        jsxCode={`
-          <Container>
-            {this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-            {this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
-            <Content>
-              {this.props.data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
-                <ImgContainer>
-                  <img src={icon.file.url} alt={icon.title} />
-                </ImgContainer>
-              ))}
-              {this.props.data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
-                <IconTitle>{title}</IconTitle>
-              ))}
-              {this.props.data.contentfulContentfulTestIconGroup.iconText.map(text => (
-                <IconText>{text}</IconText>
-              ))}
-            </Content>
-          </Container>
-        `}
-        smDisplayHeight="1800"
-        >
-        <Container>
-          {this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-          {this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
-          <Content>
-            {this.props.data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
-              <ImgContainer>
-                <img src={icon.file.url} alt={icon.title} />
-              </ImgContainer>
-            ))}
-            {this.props.data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
-              <IconTitle>{title}</IconTitle>
-            ))}
-            {this.props.data.contentfulContentfulTestIconGroup.iconText.map(text => (
-              <IconText>{text}</IconText>
-            ))}
-          </Content>
-        </Container>
-      </CodeFlipper>
-    )
-  }
-}
-
+const IconGroup = ({data}) => (
+  <CodeFlipper
+    jsxCode={`
+      <Container>
+        {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+        {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+        <Content>
+          {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+            <ImgContainer>
+              <img src={icon.file.url} alt={icon.title} />
+            </ImgContainer>
+          ))}
+          {data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+            <IconTitle>{title}</IconTitle>
+          ))}
+          {data.contentfulContentfulTestIconGroup.iconText.map(text => (
+            <IconText>{text}</IconText>
+          ))}
+        </Content>
+      </Container>
+    `}
+    smDisplayHeight="265"
+    smCodeHeight="700"
+    mdDisplayHeight="130"
+    mdCodeHeight="630"
+    lgDisplayHeight="460"
+    lgCodeHeight="488"
+    >
+    <Container>
+      {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+      {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+      <Content>
+        {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+          <ImgContainer>
+            <img src={icon.file.url} alt={icon.title} />
+          </ImgContainer>
+        ))}
+        {data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+          <IconTitle>{title}</IconTitle>
+        ))}
+        {data.contentfulContentfulTestIconGroup.iconText.map(text => (
+          <IconText>{text}</IconText>
+        ))}
+      </Content>
+    </Container>
+  </CodeFlipper>
+)
 export default IconGroup
