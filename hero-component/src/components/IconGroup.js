@@ -124,7 +124,8 @@ const IconText = styled.p`
   -webkit-font-smoothing: antialiased;
   text-align: center;
 `
-
+// TODO: Rethink entire way this is handled... the CodeFlipper should contain all related 
+// divs and classes... possibly converting strings into rendered code
 // TODO: Convert to class and allow for 'flipped' to be added to the flip-container by
 // updating the state and rerendering
 //const IconGroup = ({data, children}) => (
