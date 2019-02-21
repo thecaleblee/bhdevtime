@@ -1,13 +1,35 @@
 import React from 'react'
 import './codeFlipper.css'
-import jsxToString from 'jsx-to-string'
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import jsx from 'react-syntax-highlighter/dist/esm//languages/prism/jsx';
 import { hopscotch } from 'react-syntax-highlighter/dist/esm/styles/prism';
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 
+/* To Use:
 
-//const CodeFlipper = ({ children }) => (
+  Call <CodeFlipper> with your regular JSX as a child
+  e.g. 
+    <CodeFlipper>
+      <MyButton color="blue" shadowSize={2}>
+        Click Me
+      </MyButton>
+    </CodeFlipper>
+
+  Then pass the same code as a prop to CodeFlipper through the jsxCode Prop
+   e.g. 
+    <CodeFlipper
+      jsxCode={`
+        <MyButton color="blue" shadowSize={2}>
+          Click Me
+        </MyButton>
+      `}
+      <MyButton color="blue" shadowSize={2}>
+        Click Me
+      </MyButton>
+    </CodeFlipper> 
+
+*/
+
 class CodeFlipper extends React.Component {
   constructor(props) {
     super(props);
@@ -22,7 +44,7 @@ class CodeFlipper extends React.Component {
             {this.props.children}
           </div>
           <div className="back">
-            <SyntaxHighlighter language='jsx' showLineNumbers='1' wrapLines='true' style={hopscotch}>{jsxToString(this.props.children, { useFunctionCode: true, functionNameOnly: true })}}</SyntaxHighlighter>
+            <SyntaxHighlighter language='jsx' showLineNumbers='1' wrapLines='false' style={hopscotch}>{this.props.jsxCode}}</SyntaxHighlighter>
           </div>
         </div>
       </div>

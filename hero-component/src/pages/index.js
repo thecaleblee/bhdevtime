@@ -109,7 +109,26 @@ const IconText = styled.p`
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <CodeFlipper>
+    <CodeFlipper
+      jsxCode={`
+      <Container>
+        {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+        {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+        <Content>
+          {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+            <ImgContainer>
+              <img src={icon.file.url} alt={icon.title} />
+            </ImgContainer>
+          ))}
+          {data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+            <IconTitle>{title}</IconTitle>
+          ))}
+          {data.contentfulContentfulTestIconGroup.iconText.map(text => (
+            <IconText>{text}</IconText>
+          ))}
+        </Content>
+      </Container>
+      `}>
       <Container>
         {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
         {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }

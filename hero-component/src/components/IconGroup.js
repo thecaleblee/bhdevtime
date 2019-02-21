@@ -106,7 +106,7 @@ const IconText = styled.p`
 // divs and classes... possibly converting strings into rendered code
 // TODO: Convert to class and allow for 'flipped' to be added to the flip-container by
 // updating the state and rerendering
-//const IconGroup = ({data, children}) => (
+//const IconGroup = ({this.props.data, children}) => (
 class IconGroup extends Component {
   constructor(props) {
     super(props);
@@ -121,23 +121,23 @@ class IconGroup extends Component {
 
     return (
       <>
-        {`<Container>
-        {data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-        {data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+        <Container>
+        {this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+        {this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
         <Content>
-          {data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+          {this.props.data.contentfulContentfulTestIconGroup.iconImages.map(icon => (
             <ImgContainer>
               <img src={icon.file.url} alt={icon.title} />
             </ImgContainer>
           ))}
-          {data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+          {this.props.data.contentfulContentfulTestIconGroup.iconTitles.map(title => (
             <IconTitle>{title}</IconTitle>
           ))}
-          {data.contentfulContentfulTestIconGroup.iconText.map(text => (
+          {this.props.data.contentfulContentfulTestIconGroup.iconText.map(text => (
             <IconText>{text}</IconText>
           ))}
         </Content>
-        </Container>`}
+        </Container>
       </>
     )
   }
