@@ -1,5 +1,5 @@
 import React from 'react'
-//import './codeFlipper.css'
+import './codeFlipper.css'
 import jsxToString from 'jsx-to-string'
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import jsx from 'react-syntax-highlighter/dist/esm//languages/prism/jsx';
