@@ -22,7 +22,7 @@ class CodeFlipper extends React.Component {
             {this.props.children}
           </div>
           <div className="back">
-            <SyntaxHighlighter language='jsx' showLineNumbers='1' wrapLines='true' style={hopscotch}>{jsxToString(this.props.children)}</SyntaxHighlighter>
+            <SyntaxHighlighter language='jsx' showLineNumbers='1' wrapLines='true' style={hopscotch}>{jsxToString(this.props.children, { useFunctionCode: true, functionNameOnly: true })}}</SyntaxHighlighter>
           </div>
         </div>
       </div>
