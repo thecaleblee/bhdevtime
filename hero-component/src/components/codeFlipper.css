@@ -1,0 +1,92 @@
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	transition: all ease .2s;
+}
+
+.flip-container::before {
+	display: block;
+	content: '';
+	width: 100%;
+	height: 1px;
+	clear: both;
+}
+
+/* flip the pane when flippeded */
+.flip-container.flipped .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container,
+.front, 
+.back {
+	width: 100vw;
+}
+
+.flip-controls-container {
+	position: relative;
+}
+
+.flip-controls-container button {
+	position: absolute;
+	top: 10%;
+	right: 10%;
+	opacity: 0;
+	transition: all 0.5s ease;
+	z-index: 4;
+	cursor: pointer;
+	-moz-box-shadow:inset 0px 1px 0px 0px #9acc85;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #9acc85;
+	box-shadow:inset 0px 1px 0px 0px #9acc85;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #74ad5a), color-stop(1, #68a54b));
+	background:-moz-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
+	background:-webkit-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
+	background:-o-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
+	background:-ms-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
+	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#74ad5a', endColorstr='#68a54b',GradientType=0);
+	background-color:#74ad5a;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #3b6e22;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;	
+}
+button:focus { outline: thin dotted rgba(255,255,255,0.0); }
+
+.flip-controls-container:hover button {
+	opacity: 1;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front,
+.back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
