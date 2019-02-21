@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import CodeFlipper from './CodeFlipper'
 import styled from 'styled-components'
+import CodeFlipper from './CodeFlipper'
 
 const Container = styled.div`
   max-width: 100%;
@@ -102,16 +102,8 @@ const IconText = styled.p`
   -webkit-font-smoothing: antialiased;
   text-align: center;
 `
-// TODO: Rethink entire way this is handled... the CodeFlipper should contain all related 
-// divs and classes... possibly converting strings into rendered code
-// TODO: Convert to class and allow for 'flipped' to be added to the flip-container by
-// updating the state and rerendering
-//const IconGroup = ({this.props.data, children}) => (
-class IconGroup extends Component {
-  constructor(props) {
-    super(props);
-  }
 
+class IconGroup extends Component {
   render() {
     return (
       <CodeFlipper
@@ -133,7 +125,9 @@ class IconGroup extends Component {
               ))}
             </Content>
           </Container>
-        `}>
+        `}
+        smDisplayHeight="1800"
+        >
         <Container>
           {this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
           {this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.data.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }

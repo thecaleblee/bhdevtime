@@ -1,6 +1,7 @@
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
+	transition: all ease .2s;
 }
 
 /* flip the pane when flippeded */
@@ -12,12 +13,6 @@
 .front, 
 .back {
 	width: 100vw;
-	min-height: 450px
-}
-
-/* TODO: Temp to set height of container.. will be set as a prop */
-.back {
-	min-height: 800px;
 }
 
 .flip-controls-container {
