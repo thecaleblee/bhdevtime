@@ -1,28 +1,6 @@
 import React, { Component } from 'react' 
 import styled from 'styled-components'
-import CodeFlipper from './CodeFlipper';
-import { StaticQuery, graphql } from 'gatsby';
-
-const FlipControlsContainer = styled.div `
-  position: relative;
-
-  button {
-    display: block;
-    position: absolute;
-    padding: 5px 15px;
-    z-index: 4;
-    top: 20px;
-    right: 20px;
-    transition: all 0.4s ease;
-    opacity: 0;
-  }
-
-  &:hover {
-    button {
-      opacity: 1;
-    }
-  }
-`
+//import CodeFlipper from './CodeFlipper';
 
 const Container = styled.div`
   max-width: 100%;
@@ -143,72 +121,23 @@ class IconGroup extends Component {
   
       return (
         <>
-      <StaticQuery
-        query={graphql`
-          query {
-          contentfulContentfulTestIconGroup {
-          iconTitles,
-          iconText,
-          iconImages {
-            file {
-              url,
-            }
-            title,
-          }
-        }
-        `}
-        render={(data) => ( 
-          <IconGroup data={data} />
-        )}
-      />
-      <FlipControlsContainer>
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front">
-              <Container>
-                {this.props.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-                {this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
-                <Content>
-                  {this.props.contentfulContentfulTestIconGroup.iconImages.map(icon => (
-                    <ImgContainer>
-                      <img src={icon.file.url} alt={icon.title} />
-                    </ImgContainer>
-                  ))}
-                  {this.props.contentfulContentfulTestIconGroup.iconTitles.map(title => (
-                    <IconTitle>{title}</IconTitle>
-                  ))}
-                  {this.props.contentfulContentfulTestIconGroup.iconText.map(text => (
-                    <IconText>{text}</IconText>
-                  ))}
-                </Content>
-              </Container>
-            </div>
-            <CodeFlipper>
-{`const IconGroup = ({data, children}) => (
-  <Container>
-    {this.props.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
-    {this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
-    <Content>
-      {this.props.contentfulContentfulTestIconGroup.iconImages.map(icon => (
-        <ImgContainer>
-          <img src={icon.file.url} alt={icon.title} />
-        </ImgContainer>
-      ))}
-      {this.props.contentfulContentfulTestIconGroup.iconTitles.map(title => (
-        <IconTitle>{title}</IconTitle>
-      ))}
-      {this.props.contentfulContentfulTestIconGroup.iconText.map(text => (
-        <IconText>{text}</IconText>
-      ))}
-      {children}
-    </Content>
-  </Container>
-)
-`}
-            </CodeFlipper>
-          </div>
-        </div>
-      </FlipControlsContainer>          
+          <Container>
+            {this.props.contentfulContentfulTestIconGroup.iconGroupTitle ? <IconGroupTitle>{this.props.contentfulContentfulTestIconGroup.iconGroupTitle}</IconGroupTitle>: '' }
+            {this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle ? <IconGroupSubtitle>{this.props.contentfulContentfulTestIconGroup.iconGroupSubtitle}</IconGroupSubtitle>: '' }
+            <Content>
+              {this.props.contentfulContentfulTestIconGroup.iconImages.map(icon => (
+                <ImgContainer>
+                  <img src={icon.file.url} alt={icon.title} />
+                </ImgContainer>
+              ))}
+              {this.props.contentfulContentfulTestIconGroup.iconTitles.map(title => (
+                <IconTitle>{title}</IconTitle>
+              ))}
+              {this.props.contentfulContentfulTestIconGroup.iconText.map(text => (
+                <IconText>{text}</IconText>
+              ))}
+            </Content>
+          </Container>
       </>
     )
   }

@@ -52,6 +52,16 @@ export const query = graphql`
         }
       }
     }
+    contentfulContentfulTestIconGroup {
+      iconTitles
+      iconText
+      iconImages {
+        file {
+          url
+        }
+        title
+      }
+    }
     contentfulFeatureGrid {
       featureGridTitle
       featureIcon1 {
