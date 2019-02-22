@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import "./base.css"
 import styled from 'styled-components'
-import Header from "./header";
+import Header from "./Header";
 
 const Footer = styled.footer`
   grid-row: last-child;
@@ -10,6 +10,7 @@ const Footer = styled.footer`
 `
 
 const Layout = ({ children }) => (
+
   <div>
     <Header></Header>
     {children}

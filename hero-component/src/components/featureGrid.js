@@ -1,75 +1,61 @@
 import React from 'react'
 
-const FeatureGrid = ({data, children}) => (
-  <div id="feature-grid" className="feature-grid secondary ">
-    <div className="container lazyloaded" data-expand="-20">
-      <div className="feature-grid-header">
-        <h2>{data.contentfulFeatureGrid.featureGridTitle}</h2>
-      </div>
-      <div className="row feature-grid-row">
+class FeatureGrid extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
+  createFeatureGridItems() {
+    let icons = []
+    let imgSrc = 0;
+
+    for (let i = 1; i < 7; i++) {
+       switch(i) {
+        case 1 :
+          imgSrc = this.props.data.contentfulFeatureGrid.featureIcon1.file.url;
+          break
+        case 2:
+          imgSrc = this.props.data.contentfulFeatureGrid.featureIcon2.file.url;
+          break
+        case 3:
+          imgSrc = this.props.data.contentfulFeatureGrid.featureIcon3.file.url;
+          break
+        default:
+          imgSrc = this.props.data.contentfulFeatureGrid.featureIcon1.file.url;
+          break
+       }
+
+      icons.push(
         <div className="feature col-xs-12 col-md-4">
           <div className="feature-icon">
-            <img src={data.contentfulFeatureGrid.featureIcon1.file.url} className="image-responsive" alt={data.contentfulFeatureGrid.featureIcon1.title} />
+            <img src={imgSrc} className="image-responsive" alt={this.props.data.contentfulFeatureGrid.featureIcon1.title} />
           </div>
           <div className="feature-text">
-            <h6 className="feature-header">{data.contentfulFeatureGrid.featureHeading1}</h6>
-            <p className="txt-size-secondary">{data.contentfulFeatureGrid.featureText1}</p>
+            <h6 className="feature-header">{this.props.data.contentfulFeatureGrid.featureHeading1}</h6>
+            <p className="txt-size-secondary">{this.props.data.contentfulFeatureGrid.featureText1}</p>
           </div>
         </div>
+      )
+    }
 
-        <div className="feature col-xs-12 col-md-4">
-          <div className="feature-icon">
-            <img src={data.contentfulFeatureGrid.featureIcon2.file.url} className="image-responsive" alt={data.contentfulFeatureGrid.featureIcon2.title} />
-          </div>
-          <div className="feature-text">
-            <h6 className="feature-header">{data.contentfulFeatureGrid.featureHeading2}</h6>
-            <p className="txt-size-secondary">{data.contentfulFeatureGrid.featureText2}</p>
-          </div>
-        </div>
+    return icons 
+  }
 
-        <div className="feature col-xs-12 col-md-4">
-          <div className="feature-icon">
-            <img src={data.contentfulFeatureGrid.featureIcon3.file.url} className="image-responsive" alt={data.contentfulFeatureGrid.featureIcon3.title} />
-          </div>
-          <div className="feature-text">
-            <h6 className="feature-header">{data.contentfulFeatureGrid.featureHeading3}</h6>
-            <p className="txt-size-secondary">{data.contentfulFeatureGrid.featureText3}</p>
-          </div>
-        </div>
+  render() {
 
-        <div className="feature col-xs-12 col-md-4">
-          <div className="feature-icon">
-            <img src={data.contentfulFeatureGrid.featureIcon4.file.url} className="image-responsive" alt={data.contentfulFeatureGrid.featureIcon4.title} />
+    return (
+      <div id="feature-grid" className="feature-grid secondary ">
+        <div className="container lazyloaded" data-expand="-20">
+          <div className="feature-grid-header">
+            <h2>{this.props.data.contentfulFeatureGrid.featureGridTitle}</h2>
           </div>
-          <div className="feature-text">
-            <h6 className="feature-header">{data.contentfulFeatureGrid.featureHeading4}</h6>
-            <p className="txt-size-secondary">{data.contentfulFeatureGrid.featureText4}</p>
-          </div>
-        </div>
-
-        <div className="feature col-xs-12 col-md-4">
-          <div className="feature-icon">
-            <img src={data.contentfulFeatureGrid.featureIcon5.file.url} className="image-responsive" alt={data.contentfulFeatureGrid.featureIcon5.title} />
-          </div>
-          <div className="feature-text">
-            <h6 className="feature-header">{data.contentfulFeatureGrid.featureHeading5}</h6>
-            <p className="txt-size-secondary">{data.contentfulFeatureGrid.featureText5}</p>
-          </div>
-        </div>
-
-        <div className="feature col-xs-12 col-md-4">
-          <div className="feature-icon">
-            <img src={data.contentfulFeatureGrid.featureIcon6.file.url} className="image-responsive" alt={data.contentfulFeatureGrid.featureIcon6.title} />
-          </div>
-          <div className="feature-text">
-            <h6 className="feature-header">{data.contentfulFeatureGrid.featureHeading6}</h6>
-            <p className="txt-size-secondary">{data.contentfulFeatureGrid.featureText6}</p>
+          <div className="row feature-grid-row">
+            {this.createFeatureGridItems()}
           </div>
         </div>
       </div>
-    </div>
-  </div>
-)
+    )
+  }
+}
 
 export default FeatureGrid 

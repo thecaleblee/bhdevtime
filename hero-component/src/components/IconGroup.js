@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import CodeFlipper from './CodeFlipper'
 
@@ -150,4 +150,5 @@ const IconGroup = ({data}) => (
     </Container>
   </CodeFlipper>
 )
+
 export default IconGroup
