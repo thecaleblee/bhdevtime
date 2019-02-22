@@ -1,10 +1,10 @@
 import React from 'react'
 import './codeFlipper.css'
 import styled from 'styled-components'
-import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import jsx from 'react-syntax-highlighter/dist/esm//languages/prism/jsx';
-import { hopscotch } from 'react-syntax-highlighter/dist/esm/styles/prism';
-SyntaxHighlighter.registerLanguage('jsx', jsx);
+import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter"
+import jsx from 'react-syntax-highlighter/dist/esm//languages/prism/jsx'
+import { hopscotch } from 'react-syntax-highlighter/dist/esm/styles/prism'
+SyntaxHighlighter.registerLanguage('jsx', jsx)
 
 /* To Use:
 
