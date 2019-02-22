@@ -6,7 +6,6 @@ import "./wordpress-hosting.css"
 import Hero from "../components/Hero"
 import IconGroup from "../components/IconGroup"
 import PricingCard from "../components/PricingCards";
-import FeatureGrid from "../components/FeatureGrid";
 
 const WordpressHostingPage = ({ data, children }) => (
   <Layout>
@@ -18,7 +17,6 @@ const WordpressHostingPage = ({ data, children }) => (
         </Hero>
         <IconGroup data={data} />
         <PricingCard />
-        <FeatureGrid data={data} />
         {children}
       </div>
     </div>
