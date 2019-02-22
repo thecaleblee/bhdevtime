@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import SEO from '../components/seo'
 import '../pages/wordpress-hosting.css'
 import Hero from '../components/Hero'
+import IconGroup from '../components/IconGroup';
+import PricingCard from '../components/PricingCard'
 
 const WordpressHostingPage = ({ data, children }) => (
   <Layout>
@@ -13,6 +15,8 @@ const WordpressHostingPage = ({ data, children }) => (
         <Hero data={data}>
           vat disclaimer
         </Hero>
+        <IconGroup data={data} />
+        <PricingCard />
       </div>
     </div>
   </Layout>
