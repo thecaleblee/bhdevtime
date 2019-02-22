@@ -1,12 +1,12 @@
-import React from "react"
-import Layout from "../components/layout"
+import React from 'react'
+import Layout from '../components/layout'
 import { graphql } from "gatsby"
-import SEO from "../components/seo"
-import "./wordpress-hosting.css"
-import Hero from "../components/Hero"
-import IconGroup from "../components/IconGroup"
-import PricingCard from "../components/PricingCards"
-import FeatureGrid from "../components/FeatureGrid"
+import SEO from '../components/seo'
+import '../pages/wordpress-hosting.css'
+import Hero from '../components/Hero'
+import IconGroup from '../components/IconGroup'
+import PricingCard from '../components/PricingCard'
+import FeatureGrid from '../components/FeatureGrid'
 
 const WordpressHostingPage = ({ data, children }) => (
   <Layout>

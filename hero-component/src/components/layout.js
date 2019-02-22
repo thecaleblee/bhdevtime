@@ -1,8 +1,8 @@
-import React from "react"
-import PropTypes from "prop-types"
-import "./base.css"
+import React from 'react' 
+import PropTypes from 'prop-types' 
+import '../components/base.css'
 import styled from 'styled-components'
-import Header from "./Header";
+import Header from '../components/Header' 
 
 const Footer = styled.footer`
   grid-row: last-child;
