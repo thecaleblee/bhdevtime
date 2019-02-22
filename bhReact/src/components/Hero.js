@@ -50,9 +50,9 @@ const Hero = ({data, children}) => (
         </Container>
       </HeroDiv>
     `}
-    smDisplayHeight="515"
+    smDisplayHeight="615"
     smCodeHeight="1091"
-    mdDisplayHeight="580"
+    mdDisplayHeight="440"
     mdCodeHeight="780"
     lgDisplayHeight="595"
     lgCodeHeight="860"

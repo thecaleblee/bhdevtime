@@ -152,11 +152,11 @@ class FeatureGrid extends React.Component {
             return icons 
           }
         `}
-        smDisplayHeight="265"
+        smDisplayHeight="1065"
         smCodeHeight="700"
-        mdDisplayHeight="130"
-        mdCodeHeight="630"
-        lgDisplayHeight="578"
+        mdDisplayHeight="600"
+        mdCodeHeight="1030"
+        lgDisplayHeight="508"
         lgCodeHeight="1600"
       >
         <div id="feature-grid" className="feature-grid secondary ">

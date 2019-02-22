@@ -72,7 +72,7 @@ const FlipContainer = styled.div`
     height: ${props => props.smCodeHeight}px;
   }
 
-  @media (min-width: 36rem) {
+  @media (min-width: 768px) {
     min-height: ${props => props.mdDisplayHeight}px;
 
     &.flipped {
@@ -84,7 +84,7 @@ const FlipContainer = styled.div`
     }
   }
 
-  @media (min-width: 48rem) {
+  @media (min-width: 992px) {
     min-height: ${props => props.lgDisplayHeight}px;
 
     &.flipped {

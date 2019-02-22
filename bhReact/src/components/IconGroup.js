@@ -124,9 +124,9 @@ const IconGroup = ({data}) => (
         </Content>
       </Container>
     `}
-    smDisplayHeight="265"
+    smDisplayHeight="365"
     smCodeHeight="700"
-    mdDisplayHeight="130"
+    mdDisplayHeight="350"
     mdCodeHeight="630"
     lgDisplayHeight="460"
     lgCodeHeight="488"

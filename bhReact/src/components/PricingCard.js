@@ -134,9 +134,9 @@ const PricingCard = () => (
         </div>
       </section>
       `}
-      smDisplayHeight="515"
+      smDisplayHeight="1740"
       smCodeHeight="1091"
-      mdDisplayHeight="580"
+      mdDisplayHeight="665"
       mdCodeHeight="780"
       lgDisplayHeight="755"
       lgCodeHeight="860"
