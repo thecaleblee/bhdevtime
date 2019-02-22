@@ -6,8 +6,9 @@ import '../pages/wordpress-hosting.css'
 import Hero from '../components/Hero'
 import IconGroup from '../components/IconGroup';
 import PricingCard from '../components/PricingCard'
+import FeatureGrid from '../components/FeatureGrid';
 
-const WordpressHostingPage = ({ data, children }) => (
+const WordpressHostingPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <div className="site-wrapper">
@@ -17,6 +18,7 @@ const WordpressHostingPage = ({ data, children }) => (
         </Hero>
         <IconGroup data={data} />
         <PricingCard />
+        <FeatureGrid data={data} />
       </div>
     </div>
   </Layout>
