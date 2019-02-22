@@ -1,5 +1,5 @@
 import React from 'react'
-import CodeFlipper from '../components/CodeFlipper'
+import CodeFlipper from './CodeFlipper'
 
 class FeatureGrid extends React.Component {
   createFeatureGridItems() {
