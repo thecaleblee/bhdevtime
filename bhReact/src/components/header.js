@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React, { Children } from "react"
+import React from "react"
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
@@ -26,7 +26,7 @@ const HeaderWrapper = styled.div`
   }
 `
 
-const Header = ({Children}) => (
+const Header = ({children}) => (
   <HeaderWrapper>
     <Link to="/" className="btn-lg">
       Home
@@ -34,7 +34,7 @@ const Header = ({Children}) => (
     <Link to="/wordpress-hosting" className="btn-lg">
       Wordpress-Hosting
     </Link>
-    {Children}
+    {children}
   </HeaderWrapper>
 )
 

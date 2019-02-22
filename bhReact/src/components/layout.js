@@ -13,7 +13,7 @@ const Footer = styled.footer`
 const Layout = ({ children }) => (
 
   <div>
-    <Header></Header>
+    <Header><a className="btn-lg" href="/">Reload Site</a></Header>
     {children}
     <Footer>
       © {new Date().getFullYear()} BHFOSDEV, Bluehost, calebmasters
