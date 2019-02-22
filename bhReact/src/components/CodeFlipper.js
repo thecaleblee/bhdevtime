@@ -82,12 +82,4 @@ function CodeFlipper(props) {
   );
 }
 
-CodeFlipper.defaultProps = {
-  smDisplayHeight: "110",
-  smCodeHeight: "110",
-  mdDisplayHeight: "810",
-  mdCodeHeight: "110",
-  lgDisplayHeight: "890"
-}
-
 export default CodeFlipper
