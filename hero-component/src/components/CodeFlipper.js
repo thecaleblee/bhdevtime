@@ -11,14 +11,16 @@ SyntaxHighlighter.registerLanguage('jsx', jsx);
   Template
   <CodeFlipper
     jsxCode={`
-      // jsx goes here 
-    `}
-    smDisplayHeight="335"
-    smCodeHeight="861"
-    mdDisplayHeight="430"
-    lgDisplayHeight="460"
+        // jsx goes here 
+      `}
+      smDisplayHeight="515"
+      smCodeHeight="1091"
+      mdDisplayHeight="580"
+      mdCodeHeight="780"
+      lgDisplayHeight="595"
+      lgCodeHeight="860"
     >
-      // actual jsx goes here
+    // actual jsx goes here
   </CodeFlipper>
 
   Call <CodeFlipper> with your regular JSX as a child
@@ -57,6 +59,13 @@ const FlipContainer = styled.div`
     min-height: ${props => props.smCodeHeight}px;
     margin-top: -8px;
     margin-bottom: -8px;
+
+    .back {
+      pre {
+        overflow: scroll !important;
+        height: 100% !important;
+      }
+    }
   }
 
   .back {
@@ -80,6 +89,10 @@ const FlipContainer = styled.div`
 
     &.flipped {
       min-height: ${props => props.lgCodeHeight}px;
+
+      .back {
+        display: block;
+      }
     }
 
     .back {
@@ -116,15 +129,7 @@ class CodeFlipper extends React.Component {
         <button onClick={this.handleClick}>
           {toggled ? 'Hide Code' : 'Show Code'}
         </button>
-        <FlipContainer 
-          smDisplayHeight={this.props.smDisplayHeight}
-          smCodeHeight={this.props.smCodeHeight}
-          mdDisplayHeight={this.props.mdDisplayHeight}
-          mdCodeHeight={this.props.mdCodeHeight}
-          lgDisplayHeight={this.props.lgDisplayHeight}
-          lgCodeHeight={this.props.lgCodeHeight}
-          className={toggled ? 'flip-container flipped' : 'flip-container'}
-        >
+        <FlipContainer {...this.props} className={toggled ? 'flip-container flipped' : 'flip-container'}>
           <div className="flipper">
             <div className="front">
               {this.props.children}
