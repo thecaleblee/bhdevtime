@@ -10,7 +10,7 @@ import FeatureGrid from '../components/FeatureGrid';
 
 const WordpressHostingPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="WP Components Example" keywords={[`gatsby`, `application`, `react`]} />
     <div className="site-wrapper">
       <div className="site-canvas">
         <Hero data={data}>
