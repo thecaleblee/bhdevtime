@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../components/codeFlipper.css'
 import styled from 'styled-components'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -56,51 +56,30 @@ const FlipContainer = styled.div`
 const CodeContainer = styled.div`
 `
 
-class CodeFlipper extends React.Component {
-  constructor(props) {
-    super(props);
+function CodeFlipper(props) { 
+  const [toggled, setToggle] = useState(false);
 
-    this.state = {
-      toggled: false,
-    };
-
-    this.handleClick = this.handleClick.bind(this);
+  const handleClick = () => {
+    setToggle(!toggled)
   }
 
-  handleClick() {
-    this.setState(state => ({
-      toggled: !state.toggled
-    }));
-  }
-
-  render() { 
-    const toggled = this.state.toggled;
-
-    return (
-      <div class="flip-controls-container">
-        <button onClick={this.handleClick}>
-          {toggled ? 'Hide Code' : 'Show Code'}
-        </button>
-        <FlipContainer {...this.props} className={toggled ? 'flip-container flipped' : 'flip-container'}>
-          <div className="flipper">
-            <div className="front">
-              {this.props.children}
-            </div>
-            <CodeContainer className="back">
-              <SyntaxHighlighter language='jsx' showLineNumbers='1' wrapLines='false' style={hopscotch}>{this.props.jsxCode}}</SyntaxHighlighter>
-            </CodeContainer>
+  return (
+    <div class="flip-controls-container">
+      <button onClick={handleClick}>
+        {toggled ? 'Hide Code' : 'Show Code'}
+      </button>
+      <FlipContainer {...props} className={toggled ? 'flip-container flipped' : 'flip-container'}>
+        <div className="flipper">
+          <div className="front">
+            {props.children}
           </div>
-        </FlipContainer>
-      </div>
-    )
-  }
-}
-
-CodeFlipper.defaultProps = {
-  smDisplayHeight: "110",
-  smCodeHeight: "110",
-  mdDisplayHeight: "110",
-  mdCodeHeight: "110"
+          <CodeContainer className="back">
+            <SyntaxHighlighter language='jsx' showLineNumbers='1' wrapLines='false' style={hopscotch}>{props.jsxCode}}</SyntaxHighlighter>
+          </CodeContainer>
+        </div>
+      </FlipContainer>
+    </div>
+  );
 }
 
 export default CodeFlipper
