@@ -2,10 +2,6 @@ import React from 'react'
 import CodeFlipper from './CodeFlipper'
 
 class FeatureGrid extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   createFeatureGridItems() {
     let icons = []
     let { imgSrc, imgAlt, featureHeading, featureText } = 0;
