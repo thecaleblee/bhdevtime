@@ -1,56 +1,8 @@
 import React from 'react'
 import '../components/codeFlipper.css'
 import styled from 'styled-components'
-import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter"
-import jsx from 'react-syntax-highlighter/dist/esm//languages/prism/jsx'
-import { hopscotch } from 'react-syntax-highlighter/dist/esm/styles/prism'
-SyntaxHighlighter.registerLanguage('jsx', jsx)
-
-/* To Use:
-
-  Template
-  <CodeFlipper
-    jsxCode={`
-        // jsx goes here 
-      `}
-      smDisplayHeight="515"
-      smCodeHeight="1091"
-      mdDisplayHeight="580"
-      mdCodeHeight="780"
-      lgDisplayHeight="595"
-      lgCodeHeight="860"
-    >
-    // actual jsx goes here
-  </CodeFlipper>
-
-  Call <CodeFlipper> with your regular JSX as a child
-  e.g. 
-    <CodeFlipper>
-      <MyButton color="blue" shadowSize={2}>
-        Click Me
-      </MyButton>
-    </CodeFlipper>
-
-  Then pass the same code as a prop to CodeFlipper through the jsxCode Prop
-   e.g. 
-    <CodeFlipper
-      jsxCode={`
-        <MyButton color="blue" shadowSize={2}>
-          Click Me
-        </MyButton>
-      `}
-      <MyButton color="blue" shadowSize={2}>
-        Click Me
-      </MyButton>
-    </CodeFlipper> 
-
-    TODO: Make this not need to have explicit height
-    The main container will need to have its sizes set at this time for mobile, tablet, desktop
-    <Code Flipper
-      smDisplayHeight=
-      mdDisplayHeight=
-      lgDisplayHeight=
-*/
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { hopscotch } from 'react-syntax-highlighter/dist/styles/prism'
 
 const FlipContainer = styled.div`
   min-height: ${props => props.smDisplayHeight}px;
