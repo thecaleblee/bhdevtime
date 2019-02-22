@@ -26,7 +26,7 @@ const HeaderWrapper = styled.div`
   }
 `
 
-const Header = () => (
+const Header = ({children}) => (
   <HeaderWrapper>
     <Link to="/" className="btn-lg">
       Home
@@ -34,6 +34,7 @@ const Header = () => (
     <Link to="/wordpress-hosting" className="btn-lg">
       Wordpress-Hosting
     </Link>
+    {children}
   </HeaderWrapper>
 )
 

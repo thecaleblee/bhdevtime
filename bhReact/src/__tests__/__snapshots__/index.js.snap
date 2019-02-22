@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index renders correctly 1`] = `
+<div>
+  <div
+    className="sc-bdVaJa dSFqaK"
+  >
+    <a
+      className="btn-lg"
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      className="btn-lg"
+      href="/wordpress-hosting"
+    >
+      Wordpress-Hosting
+    </a>
+    <a
+      className="btn-lg"
+      href="/"
+    >
+      Reload Site
+    </a>
+  </div>
+  <h1
+    className="sc-htpNat cRYqJk"
+  >
+    Purpose
+  </h1>
+  <p
+    className="sc-bxivhb fXVBn"
+  >
+    To test the ability to use React and Contentful to create a static version of BH.components using components, with test coverage, while allowing editing from non-developers via Contentful.
+  </p>
+  <footer
+    className="sc-bwzfXH fQNGhL"
+  >
+    © 
+    2019
+     BHFOSDEV, Bluehost, calebmasters
+  </footer>
+</div>
+`;
