@@ -8,7 +8,7 @@ const Footer = styled.footer`
   grid-row: last-child;
   text-align: center;
   padding: 30px;
-`
+`;
 
 const Layout = ({ children }) => (
 
