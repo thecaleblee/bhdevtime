@@ -26,7 +26,7 @@ import styled from 'styled-components'
     border-bottom: 1px solid rgba(208,204,92,.28);
     background-color: #f9edc02e;
 
-    a {
+    .btn-sm {
       margin-right: 10px;
       background: rgba(50,140,175, 1);
       border-color: rgba(50,120,175, 1);
@@ -89,7 +89,13 @@ const IndexPage = () =>  {
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <Heading2>Generate Bookmarklettes for your brands templates here</Heading2>
       <Container key="generateKey" name="generateKey">
-        <p>Enter a name for your bookmark & URL to a JIRA template below.</p>
+        <p>Enter a name for your bookmark & URL to a JIRA template below.<br />
+        <br />
+        <small>
+          *Templates must be wrapped in a code block.<br />
+          For example: <a href="https://jira.endurance.com/browse/BHFOS-1927" target="_blank" rel="noopener noreferrer">Bluehost Story Template</a>
+        </small>
+        </p>
         <p>Your bookmarklette is created in real time</p>
         <label key="nameinput">
           <span>
