@@ -94,6 +94,7 @@ const IndexPage = () =>  {
         <h4>Updates:</h4>
         <ul>
           <li>9/6/19 - The bookmarklet will now function on open Jira Dialogue boxes as well</li>
+          <li>7/1/20 - These are depreciated; see the More button in Jira for Tarans superior solution</li>
         </ul>
         <h4>Generate Bookmarklette:</h4>
         <p>Enter a name for your bookmark & URL to a JIRA template below.<br />
