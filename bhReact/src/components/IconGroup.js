@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import CodeFlipper from './CodeFlipper'
+import CodeFlipper from './CodeFlipper-v2'
 
 const Container = styled.div`
   max-width: 100%;

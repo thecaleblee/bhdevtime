@@ -1,5 +1,5 @@
 import React from 'react'
-import CodeFlipper from './CodeFlipper'
+import CodeFlipper from './CodeFlipper-v2'
 
 const PricingCard = () => (
   <CodeFlipper

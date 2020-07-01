@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import CodeFlipper from '../components/CodeFlipper'
+import CodeFlipper from '../components/CodeFlipper-v2'
 
 const Container = styled.div`
 `
