@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from 'styled-components'
 
-
   const Paragraph = styled.p`
     text-align: center;
     padding: 0 20vw;
@@ -89,69 +88,6 @@ const IndexPage = () =>  {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <Heading2>Generate Bookmarklettes for your brands templates here</Heading2>
-      <Container key="generateKey" name="generateKey">
-        <h4>Updates:</h4>
-        <ul>
-          <li>9/6/19 - The bookmarklet will now function on open Jira Dialogue boxes as well</li>
-          <li>7/1/20 - These are depreciated; see the More button in Jira for Tarans superior solution</li>
-        </ul>
-        <h4>Generate Bookmarklette:</h4>
-        <p>Enter a name for your bookmark & URL to a JIRA template below.<br />
-        <br />
-        <small>
-          *Templates must be wrapped in a code block.<br />
-          For example: <a href="https://jira.endurance.com/browse/BHFOS-1927" target="_blank" rel="noopener noreferrer">Bluehost Story Template</a>
-        </small>
-        </p>
-        <p>Your bookmarklette is created in real time</p>
-        <label key="nameinput">
-          <span>
-            Bookmarklette Name:
-            <small>e.g. "AutoQA"</small> 
-          </span>
-          <input 
-            name="name"
-            value={template.name}
-            onChange={updateField}
-          />
-        </label>
-        <label label="urlInput">
-          <span>
-          Template URL:
-          </span>
-          <input 
-            name="url"
-            value={template.url}
-            onChange={updateField}
-          />
-        </label>
-
-        <h3>Your Bookmarklette</h3>
-        <p>Drag this link into your bookmarks bar.</p>
-        <a className="btn-sm" href={bookmarkletteVar}>{template.name}</a>
-        <h3>Bluehost Bookmarklettes</h3>
-        <h4>To use:</h4>
-        <ol>
-          <li>Drag these links into your bookmarks bar.</li>
-          <li>Make sure you're on a Jira story you would like to add the template to</li>
-          <li>Click the boomarklet</li>
-          <li>Wait up to 7 seconds</li>
-          <li>Profit</li>
-        </ol>
-        <a className="btn-sm" href={bookmarkletStory}>AutoStory</a>
-        <a className="btn-sm" href={bookmarkletStoryV2}>AutoStoryV2</a>
-        <a className="btn-sm" href={bookmarkletQa}>AutoQA</a>
-        <a className="btn-sm" href={bookmarkletLaunch}>AutoLaunch</a>
-        <a className="btn-sm" href={bookmarkletCreative}>AutoCreative</a>
-        <a className="btn-sm" href={bookmarkletOptimizley}>AutoOptimizley</a>
-      </Container>
-      <Heading3>What are the links at the top?</Heading3>
-      <Paragraph>
-          This original purpose of this page was to test the ability to use React and Contentful to create a static version of BH.components; using components, with test coverage, while allowing editing from non-developers via
-          Contentful.
-          It just made sense to use it for this as it already existed
-      </Paragraph>
     </Layout>
   )
 };

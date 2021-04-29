@@ -12,12 +12,10 @@ const Footer = styled.footer`
 const Layout = ({ children }) => (
 
   <div>
-    <Header>
-      <a className="btn-lg" href="/">Reload Site</a>
-    </Header>
+    <Header />
     {children}
     <Footer>
-      © {new Date().getFullYear()} BHFOSDEV, Bluehost, calebmasters
+      © {new Date().getFullYear()}calebmasters
     </Footer>
   </div> 
 )
